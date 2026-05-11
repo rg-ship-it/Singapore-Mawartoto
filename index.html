@@ -4,123 +4,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mawartoto - Konversi Toto SGP</title>
+<title>Mawartoto Result Converter</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:Arial,sans-serif;
-    background:url('https://mariterbang.io/download/LFVvAEcj.jpg') center/cover fixed no-repeat;
-    color:#fff;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-body:before{
-    content:"";
+
+body{
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+    background:url('https://mariterbang.io/download/LFVvAEcj.jpg') center center/cover fixed no-repeat;
+    color:#fff;
+    position:relative;
+}
+
+body::before{
+    content:'';
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.72);
+    background:rgba(0,0,0,.55);
     z-index:-1;
 }
-header{
-    background:linear-gradient(90deg,rgba(120,0,0,.9),rgba(0,0,0,.85));
-    padding:14px 25px;
+
+/* HEADER */
+.top-header{
+    position:relative;
+    width:100%;
+    padding:18px 35px;
+    background:rgba(0,0,0,0.45);
+    border-bottom:1px solid rgba(255,0,0,0.35);
+    backdrop-filter:blur(6px);
+}
+
+.header-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to right,
+        rgba(120,0,0,.78),
+        rgba(0,0,0,.58)
+    );
+}
+
+.header-content{
+    position:relative;
+    z-index:2;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    border-bottom:2px solid #b40000;
-}
-.logo img{height:55px}
-.login-btn{
-    background:linear-gradient(#ff0000,#8b0000);
-    color:#fff;
-    padding:11px 25px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    box-shadow:0 0 12px red;
-}
-.wrapper{
-    max-width:620px;
-    margin:70px auto;
-    padding:18px;
-}
-.box{
-    background:rgba(5,5,5,.92);
-    border:1px solid #b50000;
-    border-radius:14px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 0 25px rgba(255,0,0,.35);
-}
-.box h1{
-    font-size:24px;
-    margin-bottom:18px;
-    color:#fff;
-}
-.label{
-    font-weight:bold;
-    margin-bottom:8px;
-}
-.input-row{
-    display:grid;
-    grid-template-columns:repeat(6,1fr) 20px 1fr;
-    gap:6px;
     align-items:center;
 }
+
+.header-logo img{
+    height:58px;
+}
+
+.header-menu a{
+    text-decoration:none;
+    background:linear-gradient(#ff0000,#8f0000);
+    color:#fff;
+    padding:13px 30px;
+    border-radius:10px;
+    font-weight:800;
+    letter-spacing:1px;
+    box-shadow:0 0 14px rgba(255,0,0,.45);
+    transition:.3s;
+}
+
+.header-menu a:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(255,0,0,.75);
+}
+
+/* CONVERTER */
+.converter{
+    max-width:920px;
+    margin:0 auto;
+    padding:45px 18px 30px;
+    text-align:center;
+}
+
+.logo-top img{
+    max-width:190px;
+    margin-bottom:18px;
+}
+
+.converter-box{
+    background:rgba(95,0,0,.78);
+    border:1px solid rgba(255,0,0,.45);
+    border-radius:25px;
+    padding:38px 24px;
+    box-shadow:0 0 35px rgba(255,0,0,.35);
+    backdrop-filter:blur(4px);
+}
+
+.title{
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:8px;
+    text-shadow:0 3px 8px rgba(0,0,0,.6);
+}
+
+.sub-title{
+    font-size:35px;
+    font-weight:800;
+    margin-bottom:32px;
+    text-shadow:0 3px 8px rgba(0,0,0,.6);
+}
+
+.label{
+    font-size:28px;
+    font-weight:800;
+    margin:24px 0 15px;
+    text-shadow:0 3px 8px rgba(0,0,0,.6);
+}
+
+.number-row{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:14px;
+    margin-bottom:25px;
+}
+
 input{
     width:100%;
-    height:42px;
-    border:none;
-    border-radius:5px;
-    text-align:center;
-    font-size:20px;
-    font-weight:bold;
-}
-.plus{
-    font-size:25px;
-    font-weight:bold;
-}
-.btn-area{
-    margin:15px 0;
-}
-button{
-    border:none;
-    padding:10px 18px;
-    border-radius:6px;
-    color:#fff;
-    font-weight:bold;
-    cursor:pointer;
-}
-.convert{background:#009b5a}
-.hapus{background:#d60000}
-.hasil-title{
-    font-size:32px;
-    margin-top:10px;
-}
-.result-box{
-    background:linear-gradient(#ff0000,#a50000);
-    margin-top:8px;
-    padding:8px;
-    border-radius:7px;
-}
-#result{
-    font-size:34px;
+    height:85px;
+    border-radius:13px;
+    border:2px solid #ff1b1b;
+    background:#fff;
     color:#000;
-    letter-spacing:3px;
+    font-size:38px;
+    font-weight:900;
+    text-align:center;
+    box-shadow:0 0 10px rgba(255,0,0,.7);
+    outline:none;
 }
+
+input:focus{
+    border-color:#fff;
+    box-shadow:0 0 18px rgba(255,255,255,.85);
+}
+
+.add-box{
+    max-width:130px;
+    margin:0 auto 30px;
+}
+
+.result-label{
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:15px;
+    text-shadow:0 3px 8px rgba(0,0,0,.6);
+}
+
+.result-box{
+    max-width:620px;
+    margin:0 auto 35px;
+    background:#fff;
+    border:2px solid #ff1b1b;
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 0 14px rgba(255,0,0,.7);
+}
+
+#result{
+    color:#000;
+    font-size:76px;
+    font-weight:1000;
+    letter-spacing:4px;
+}
+
+.btn-row{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+button{
+    width:230px;
+    padding:18px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+.reset{
+    background:linear-gradient(#e00000,#990000);
+    box-shadow:0 0 12px rgba(255,0,0,.5);
+}
+
+.convert{
+    background:linear-gradient(#2b2b2b,#080808);
+    box-shadow:0 0 12px rgba(255,255,255,.2);
+}
+
 footer{
     text-align:center;
-    padding:18px;
-    background:rgba(0,0,0,.75);
+    padding:20px;
     font-size:14px;
+    color:#ddd;
+    background:rgba(0,0,0,.65);
 }
-@media(max-width:600px){
-    .logo img{height:42px}
-    .wrapper{margin:35px auto}
-    .input-row{
-        grid-template-columns:repeat(3,1fr);
+
+/* MOBILE */
+@media(max-width:700px){
+    .top-header{
+        padding:14px 16px;
     }
-    .plus{
-        display:none;
+
+    .header-logo img{
+        height:42px;
+    }
+
+    .header-menu a{
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+    .converter{
+        padding:30px 12px;
+    }
+
+    .converter-box{
+        padding:28px 15px;
+        border-radius:18px;
+    }
+
+    .logo-top img{
+        max-width:155px;
+    }
+
+    .title{
+        font-size:29px;
+    }
+
+    .sub-title{
+        font-size:25px;
+        margin-bottom:25px;
+    }
+
+    .label{
+        font-size:23px;
+    }
+
+    .number-row{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
+
+    input{
+        height:70px;
+        font-size:30px;
+    }
+
+    .add-box{
+        max-width:115px;
+    }
+
+    .result-label{
+        font-size:23px;
+    }
+
+    #result{
+        font-size:55px;
+    }
+
+    button{
+        width:100%;
+        font-size:20px;
     }
 }
 </style>
@@ -128,112 +290,133 @@ footer{
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="https://mawartotobagnaia.com/assets/img/xj/logo.png?v=1777859600" alt="Mawartoto">
+<header class="top-header">
+    <div class="header-overlay"></div>
+
+    <div class="header-content">
+        <div class="header-logo">
+            <img src="https://mawartotobagnaia.com/assets/img/xj/logo.png?v=1777859600" alt="Mawartoto">
+        </div>
+
+        <div class="header-menu">
+            <a href="https://mawartotoaudi.com/register?referral_code=akuntestnn" target="_blank">
+                LOGIN
+            </a>
+        </div>
     </div>
-    <a class="login-btn" href="https://mawartotoaudi.com/register?referral_code=akuntestnn" target="_blank">LOGIN</a>
 </header>
 
-<div class="wrapper">
-    <div class="box">
-        <h1>KONVERSI SINGAPORE MAWARTOTO</h1>
+<main class="converter">
+    <div class="converter-box">
 
-        <div class="label">Winning Numbers</div>
+        <div class="logo-top">
+            <img src="https://mawartotobagnaia.com/assets/img/xj/logo.png?v=1777859600" alt="Mawartoto">
+        </div>
+
+        <h1 class="title">Mawartoto Result Converter</h1>
+        <h2 class="sub-title">Singapore</h2>
 
         <form name="fom">
-            <div class="input-row">
-                <input type="text" id="s1" maxlength="2" oninput="onlyNumber(this, 's2')">
-                <input type="text" id="s2" maxlength="2" oninput="onlyNumber(this, 's3')">
-                <input type="text" id="s3" maxlength="2" oninput="onlyNumber(this, 's4')">
-                <input type="text" id="s4" maxlength="2" oninput="onlyNumber(this, 's5')">
-                <input type="text" id="s5" maxlength="2" oninput="onlyNumber(this, 's6')">
-                <input type="text" id="s6" maxlength="2" oninput="onlyNumber(this, 's7')">
-                <div class="plus">+</div>
+            <div class="label">Winning Numbers</div>
+
+            <div class="number-row">
+                <input type="text" id="s1" maxlength="2" oninput="onlyNumber(this,'s2')">
+                <input type="text" id="s2" maxlength="2" oninput="onlyNumber(this,'s3')">
+                <input type="text" id="s3" maxlength="2" oninput="onlyNumber(this,'s4')">
+                <input type="text" id="s4" maxlength="2" oninput="onlyNumber(this,'s5')">
+                <input type="text" id="s5" maxlength="2" oninput="onlyNumber(this,'s6')">
+                <input type="text" id="s6" maxlength="2" oninput="onlyNumber(this,'s7')">
+            </div>
+
+            <div class="label">Additional Number</div>
+
+            <div class="add-box">
                 <input type="text" id="s7" maxlength="2" oninput="onlyNumber(this)">
             </div>
 
-            <div class="btn-area">
-                <button type="button" class="convert" onclick="convert()">Convert</button>
-                <button type="button" class="hapus" onclick="hapus()">Hapus</button>
-            </div>
+            <div class="result-label">Result Singapore</div>
 
-            <div class="hasil-title">Hasil:</div>
             <div class="result-box">
                 <div id="result">XXXX</div>
             </div>
+
+            <div class="btn-row">
+                <button type="button" class="reset" onclick="hapus()">↻ RESET</button>
+                <button type="button" class="convert" onclick="convert()">▦ CONVERT</button>
+            </div>
         </form>
+
     </div>
-</div>
+</main>
 
 <footer>
     Copyright © 2026 MAWARTOTO
 </footer>
 
 <script>
-function onlyNumber(el, nextId){
-    el.value = el.value.replace(/[^0-9]/g, '');
+function onlyNumber(el,nextId){
+    el.value = el.value.replace(/[^0-9]/g,'');
     if(el.value.length === 2 && nextId){
         document.getElementById(nextId).focus();
     }
 }
 
 function hapus(){
-    for(let i = 1; i <= 7; i++){
-        document.getElementById('s' + i).value = '';
+    for(let i=1;i<=7;i++){
+        document.getElementById('s'+i).value='';
     }
-    document.getElementById('result').innerHTML = 'XXXX';
+    document.getElementById('result').innerHTML='XXXX';
     document.getElementById('s1').focus();
 }
 
 function convert(){
-    let s1 = document.getElementById('s1').value;
-    let s2 = document.getElementById('s2').value;
-    let s3 = document.getElementById('s3').value;
-    let s4 = document.getElementById('s4').value;
-    let s5 = document.getElementById('s5').value;
-    let s6 = document.getElementById('s6').value;
-    let s7 = document.getElementById('s7').value;
+    let s1=document.getElementById('s1').value;
+    let s2=document.getElementById('s2').value;
+    let s3=document.getElementById('s3').value;
+    let s4=document.getElementById('s4').value;
+    let s5=document.getElementById('s5').value;
+    let s6=document.getElementById('s6').value;
+    let s7=document.getElementById('s7').value;
 
-    if(!s1 || !s2 || !s3 || !s4 || !s5 || !s6 || !s7){
+    if(!s1||!s2||!s3||!s4||!s5||!s6||!s7){
         alert("Harus diisi dengan angka, tidak boleh kosong");
         document.getElementById('s1').focus();
         return;
     }
 
-    let myarray = [s1, s2, s3, s4, s5, s6];
-    myarray.sort(function(a,b){return a - b});
+    let myarray=[s1,s2,s3,s4,s5,s6];
+    myarray.sort(function(a,b){return a-b});
 
-    let c = parseInt(myarray[0]) + parseInt(myarray[1]) + parseInt(myarray[2]) + parseInt(myarray[3]) + parseInt(myarray[4]) + parseInt(myarray[5]);
-    c = c * 2;
-    c = c - parseInt(myarray[0]) - parseInt(myarray[5]);
-    c = c + Number(s7);
-    c = "" + c;
+    let c=parseInt(myarray[0])+parseInt(myarray[1])+parseInt(myarray[2])+parseInt(myarray[3])+parseInt(myarray[4])+parseInt(myarray[5]);
+    c=c*2;
+    c=c-parseInt(myarray[0])-parseInt(myarray[5]);
+    c=c+Number(s7);
+    c=""+c;
 
-    if(c.length > 2){
-        c = c.substr(1,2);
+    if(c.length>2){
+        c=c.substr(1,2);
     }
 
-    let d = c.substr(1);
-    c = c.substr(0,1);
+    let d=c.substr(1);
+    c=c.substr(0,1);
 
-    let b = parseInt(myarray[3]) + parseInt(myarray[4]);
-    b = "" + b;
+    let b=parseInt(myarray[3])+parseInt(myarray[4]);
+    b=""+b;
 
-    if(b.length > 2){
-        b = b.substr(2,1);
+    if(b.length>2){
+        b=b.substr(2,1);
     }else{
-        b = b.substr(1);
+        b=b.substr(1);
     }
 
-    let a = parseInt(myarray[1]) + parseInt(myarray[2]);
-    a = "" + a;
+    let a=parseInt(myarray[1])+parseInt(myarray[2]);
+    a=""+a;
 
-    if(a.length >= 2){
-        a = a.substr(1);
+    if(a.length>=2){
+        a=a.substr(1);
     }
 
-    document.getElementById("result").innerHTML = a + "" + b + "" + c + "" + d;
+    document.getElementById("result").innerHTML=a+""+b+""+c+""+d;
 }
 </script>
 
